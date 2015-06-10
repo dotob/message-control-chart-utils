@@ -5,6 +5,11 @@ scopeName: source.msc
 fileTypes: ["msc"]
 uuid: c4c28f04-e222-45b4-81eb-a3e8065b9fca
 
+# inspired by: 
+#   https://github.com/Benvie/JavaScriptNext.tmLanguage/blob/master/JavaScriptNext.YAML-tmLanguage
+#   http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html
+#   https://manual.macromates.com/en/language_grammars#naming_conventions
+
 patterns:
 
 - include: '#comment'
