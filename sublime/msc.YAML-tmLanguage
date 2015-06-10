@@ -1,0 +1,64 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: msc - message sequence chart
+scopeName: source.msc
+fileTypes: ["msc"]
+uuid: c4c28f04-e222-45b4-81eb-a3e8065b9fca
+
+patterns:
+
+- include: '#comment'
+- include: '#message'
+- include: '#note-state'
+- include: '#alt-opt-loop-else'
+- include: '#end'
+- include: '#title-participant-autonumber'
+
+# in-repo
+- include: '#repository'
+
+repository:
+
+# control sequences
+  comment:
+    match: (?:^ *|\G *| +)((#).*)
+    captures:
+      '1': {name: comment.line.number-sign.msc}
+      '2': {name: punctuation.definition.comment.line.msc}
+
+  message:
+    match: (\w*)(->|-->)(\w*)\s*(:)\s*(.*)
+    captures:
+      '1': {name: variable.parameter.function.msc}
+      '2': {name: keyword.operator.msc}
+      '3': {name: variable.parameter.function.msc}
+      '4': {name: keyword.operator.msc}
+      '5': {name: string.other.quoted-or-unquoted}
+
+  note-state:
+    match: (note|state)\s+(over|left of|right of)\s+(.*)(:)(.*)
+    captures:
+      '1': {name: keyword.operator.msc}
+      '2': {name: entity.name.function.msc}
+      '3': {name: variable.parameter.function.msc}
+      '4': {name: keyword.operator.msc}
+      '5': {name: string.other.quoted-or-unquoted}
+
+  alt-opt-loop-else:
+    match: (alt|opt|loop|else)\s+(.*)
+    captures:
+      '1': {name: keyword.operator.msc}
+      '2': {name: string.other.quoted-or-unquoted}
+
+  end:
+    match: (end)
+    captures:
+      '1': {name: keyword.operator.msc}
+  
+  title-participant-autonumber:
+    match: (title|participant|autonumber)\s+(.*)
+    captures:
+      '1': {name: keyword.operator.msc}
+      '2': {name: string.other.quoted-or-unquoted}
+
+...

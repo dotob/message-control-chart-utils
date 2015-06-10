@@ -1,0 +1,17 @@
+{
+  "name": "MSC",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^1.0.3",
+    "commander": "^2.8.1",
+    "node-dir": "^0.1.8",
+    "websequencediagrams": "0.0.2"
+  }
+}
